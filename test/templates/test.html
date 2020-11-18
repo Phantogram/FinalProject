@@ -26,10 +26,17 @@
                 speechiness: <input type="text" name="speechiness"> 0 TO 1 <br />
                 tempo: <input type="text" name="tempo">  <br />
                 time_signature: <input type="text" name="time_signature">  <br />
-                valence: <input type="text" name="valence" /> 0 TO 1 <hr>
+                valence: <input type="text" name="valence" /> 0 TO 1 <br>
                 <input type="submit" name= "form" value="Submit" />
+            </form><hr>
+            Track Name: <br>
+            <form action="/find" method="post">
+                <input type='text' name = 'title'> 
+                <input type='submit' name = 'form' value = "Submit">
             </form>
         </p>
         <h4>{{ result }}</h4>
+        <p>With features: <br>
+        </p>
     </body>
 </html>
