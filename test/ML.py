@@ -3,9 +3,12 @@ import urllib.request
 import ast
 import json 
 
-def ML_Pro(track_values):
+def ML_Pro(fv):
     api_key = ''
     url = ''
+    
+    track_values = [ "value", "value", "value", "value", fv["acousticness"], fv["danceability"], fv["duration_ms"], fv["energy"], fv["instrumentalness"], fv["key"], fv["liveness"], fv["loudness"], fv["mode"], fv["speechiness"], fv["tempo"], fv["time_signature"], fv["valence"], "value", "0" ]
+    
     data =  {
 
             "Inputs": {

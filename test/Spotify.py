@@ -27,7 +27,18 @@ def find_track(name):
     features["liveness"] = (track[0]["liveness"])
     features["mode"] = (track[0]["mode"])
     features["time_signature"] = (track[0]["time_signature"])
+    
+    detail = {
+        "info":{
+        "name":song['tracks']['items'][0]["name"],
+        'uri':song['tracks']['items'][0]["uri"],
+        "img":song['tracks']['items'][0]["album"]["images"][2]["url"],
+        "artists":song['tracks']['items'][0]["artists"][0]["name"]
+        },
+        "features":features
+    }
+
 
     # print(features)
     # print(track_id[0]["id"])
-    return(features)
+    return(detail)

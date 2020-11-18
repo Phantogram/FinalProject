@@ -14,19 +14,19 @@
             What type of the track<br>
             Input track feature:<br>
             <form action="/ML" method="post">
-                acousticness: <input type="text" name="acousticness"> 0 TO 1  <br />
-                danceability: <input type="text" name="danceability"> 0 TO 1 <br />
-                duration_ms: <input type="text" name="duration_ms">  <br />
-                energy: <input type="text" name="energy"> 0 TO 1 <br />
-                instrumentalness: <input type="text" name="instrumentalness"> 0 TO 1 <br />
-                key: <input type="text" name="key">  <br />
-                liveness: <input type="text" name="liveness"> 0 TO 1 <br />
-                loudness: <input type="text" name="loudness"> -14 TO 0 <br />
-                mode: <input type="text" name="mode"> 0 OR 1 <br />
-                speechiness: <input type="text" name="speechiness"> 0 TO 1 <br />
-                tempo: <input type="text" name="tempo">  <br />
-                time_signature: <input type="text" name="time_signature">  <br />
-                valence: <input type="text" name="valence" /> 0 TO 1 <br>
+                acousticness: <input type="text" name="acousticness" value= "{{ track_data.features.acousticness }}"> 0 TO 1  <br />
+                danceability: <input type="text" name="danceability" value="{{ track_data.features.danceability }}"> 0 TO 1 <br />
+                duration_ms: <input type="text" name="duration_ms" value="{{ track_data.features.duration_ms }}">  <br />
+                energy: <input type="text" name="energy" value="{{ track_data.features.energy }}"> 0 TO 1 <br />
+                instrumentalness: <input type="text" name="instrumentalness" value="{{ track_data.features.instrumentalness }}"> 0 TO 1 <br />
+                key: <input type="text" name="key" value="{{ track_data.features.key }}">  <br />
+                liveness: <input type="text" name="liveness" value="{{ track_data.features.liveness }}"> 0 TO 1 <br />
+                loudness: <input type="text" name="loudness" value="{{ track_data.features.loudness }}"> -14 TO 0 <br />
+                mode: <input type="text" name="mode" value="{{ track_data.features.mode }}"> 0 OR 1 <br />
+                speechiness: <input type="text" name="speechiness" value="{{ track_data.features.speechiness }}"> 0 TO 1 <br />
+                tempo: <input type="text" name="tempo" value="{{ track_data.features.tempo }}">  <br />
+                time_signature: <input type="text" name="time_signature" value="{{ track_data.features.time_signature }}">  <br />
+                valence: <input type="text" name="valence" value="{{ track_data.features.valence }}" /> 0 TO 1 <br>
                 <input type="submit" name= "form" value="Submit" />
             </form><hr>
             Track Name: <br>
@@ -35,8 +35,15 @@
                 <input type='submit' name = 'form' value = "Submit">
             </form>
         </p>
-        <h4>{{ result }}</h4>
-        <p>With features: <br>
-        </p>
+        <h4>It might be {{ track_data.result }}</h4>
+        {% if track_data.info != None %}
+            <div>
+                <a href = "{{track_data.info.uri}}"><img src="{{track_data.info.img}}" alt="Album Images"></a>
+                <br>
+                <h4>Name: {{track_data.info.name}}</h4>
+                <h4>Artists: {{track_data.info.artists}}</h4>
+            </div>
+        {% endif %}
+
     </body>
 </html>
