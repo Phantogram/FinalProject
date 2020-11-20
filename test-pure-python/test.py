@@ -32,22 +32,22 @@ def index(data=default_track_data):
 def ML_feature(track_detail = None):
     track_data = default_track_data
     if track_detail:
-        track_data = track_detail
+       track_data = track_detail
 
-        feature_dict = track_data["features"]
-        acousticness = feature_dict["acousticness"]
-        danceability = feature_dict["danceability"]
-        duration_ms = feature_dict["duration_ms"]
-        energy = feature_dict["energy"]
-        instrumentalness = feature_dict["instrumentalness"]
-        key = feature_dict["key"]
-        liveness = feature_dict["liveness"]
-        loudness = feature_dict["loudness"]
-        mode = feature_dict["mode"]
-        speechiness = feature_dict["speechiness"]
-        tempo = feature_dict["tempo"]
-        time_signature = feature_dict["time_signature"]
-        valence = feature_dict["valence"]
+       feature_dict = track_data["features"]
+       acousticness = feature_dict["acousticness"]
+       danceability = feature_dict["danceability"]
+       duration_ms = feature_dict["duration_ms"]
+       energy = feature_dict["energy"]
+       instrumentalness = feature_dict["instrumentalness"]
+       key = feature_dict["key"]
+       liveness = feature_dict["liveness"]
+       loudness = feature_dict["loudness"]
+       mode = feature_dict["mode"]
+       speechiness = feature_dict["speechiness"]
+       tempo = feature_dict["tempo"]
+       time_signature = feature_dict["time_signature"]
+       valence = feature_dict["valence"]
         
     else:
         track_data["features"]["acousticness"] = request.form["acousticness"]
